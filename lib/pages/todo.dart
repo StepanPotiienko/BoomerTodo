@@ -12,6 +12,8 @@ class TodoPage extends StatefulWidget {
 }
 
 class _TodoPageState extends State<TodoPage> {
+  final String appBarTitle = "Boomer Todo";
+
   final _controller = TextEditingController();
 
   final hiveBox = Hive.box('tasks');
@@ -47,7 +49,7 @@ class _TodoPageState extends State<TodoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text("Boomer Todo"),
+          title: Text(appBarTitle),
           elevation: 0,
         ),
         floatingActionButton: FloatingActionButton(
@@ -87,12 +89,12 @@ class _TodoPageState extends State<TodoPage> {
 }
 
 class NewTaskDialog extends StatelessWidget {
-  final controller;
+  final TextEditingController controller;
 
-  VoidCallback onSave;
-  VoidCallback onCancel;
+  final VoidCallback onSave;
+  final VoidCallback onCancel;
 
-  NewTaskDialog(
+  const NewTaskDialog(
       {Key? key,
       required this.controller,
       required this.onCancel,

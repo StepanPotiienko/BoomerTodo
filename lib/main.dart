@@ -5,7 +5,10 @@ import 'package:learning_flutter/pages/todo.dart';
 void main() async {
   await Hive.initFlutter();
 
-  var box = await Hive.openBox('tasks');
+  // !: For some reason, Flutter marks this variable as "unused" yet still without it.
+  // !: application would not work properly.
+  // ignore: unused_local_variable
+  Box box = await Hive.openBox('tasks');
 
   runApp(const TodoApplication());
 }

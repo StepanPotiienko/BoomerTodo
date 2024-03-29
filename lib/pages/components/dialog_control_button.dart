@@ -2,9 +2,9 @@ import "package:flutter/material.dart";
 
 class DialogControlButton extends StatelessWidget {
   final String buttonValue;
-  VoidCallback onPressed;
+  final VoidCallback onPressed;
 
-  DialogControlButton(
+  const DialogControlButton(
       {super.key, required this.buttonValue, required this.onPressed});
 
   @override
